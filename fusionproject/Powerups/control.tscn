@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b2pc46ugo2dwf"]
+
+[ext_resource type="Script" uid="uid://bjxl7k2tk3884" path="res://Powerups/control.gd" id="1_r2oxj"]
+
+[node name="Control" type="Control" unique_id=369149832]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3.0
+offset_right = 43.0
+offset_bottom = 40.0
+script = ExtResource("1_r2oxj")
+
+[node name="Button" type="Button" parent="." unique_id=1846765825 groups=["powerupbutton"]]
+layout_mode = 0
+offset_left = 190.0
+offset_top = -110.0
+offset_right = 326.0
+offset_bottom = 110.0
+text = "button2"
+text_overrun_behavior = 3
+
+[node name="Button2" type="Button" parent="." unique_id=1007911489 groups=["powerupbutton"]]
+layout_mode = 0
+offset_left = 45.0
+offset_top = -110.0
+offset_right = 181.0
+offset_bottom = 110.0
+text = "button"
+
+[node name="Button3" type="Button" parent="." unique_id=2004810777 groups=["powerupbutton"]]
+layout_mode = 0
+offset_left = 337.0
+offset_top = -110.0
+offset_right = 473.0
+offset_bottom = 110.0
+text = "button3"
