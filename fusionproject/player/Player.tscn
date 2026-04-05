@@ -39,6 +39,7 @@ initial_velocity_max = 222.22
 scale_amount_max = 10.26
 
 [node name="Weakpns" parent="." unique_id=103949153 node_paths=PackedStringArray("player", "stats") instance=ExtResource("3_83hs8")]
+recuo = 1
 bala_scene = ExtResource("4_x8kxw")
 player = NodePath("..")
 stats = NodePath("../PlayerStats")

@@ -9,6 +9,7 @@ class_name Weakpons
 var timer_arma := 0.0
 var cooldown := 1.5
 
+
 func _process(delta):
 	timer_arma += delta
 
@@ -18,6 +19,7 @@ func atirar(dir: Vector2, qtd: int):
 		return
 	
 	timer_arma = 0
+	player.recoil_velocity -= dir * recuo
 	
 	var spread_total = 30.0 # graus
 	
