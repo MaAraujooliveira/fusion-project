@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cf4w6qciqplv1"]
+
+[ext_resource type="Texture2D" uid="uid://5cjse857exbb" path="res://Enemys/Zombie/zombie.png" id="1_6u33a"]
+[ext_resource type="PackedScene" uid="uid://c83kkchjj2s3q" path="res://Enemys/movement/EnemyMovement.tscn" id="2_shyxk"]
+[ext_resource type="PackedScene" uid="uid://dq0rsinn5ko3" path="res://Enemys/stats/EnemyStats.tscn" id="3_shyxk"]
+[ext_resource type="PackedScene" uid="uid://b7jtbhw60ojd5" path="res://Enemys/walk_par.tscn" id="4_e5qiq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e5qiq"]
+radius = 21.023796
+
+[node name="Zombie" type="CharacterBody2D" unique_id=1260457694]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1108701753]
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("1_6u33a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1726556719]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_e5qiq")
+
+[node name="EnemyMovement" parent="." unique_id=1551893523 node_paths=PackedStringArray("stats", "enemy", "walk_par") instance=ExtResource("2_shyxk")]
+stats = NodePath("../EnemyStats")
+enemy = NodePath("..")
+walk_par = NodePath("../CPUParticles2D2")
+
+[node name="EnemyStats" parent="." unique_id=1969344054 instance=ExtResource("3_shyxk")]
+
+[node name="CPUParticles2D2" parent="." unique_id=1151170088 instance=ExtResource("4_e5qiq")]

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b7jtbhw60ojd5"]
+
+[node name="CPUParticles2D2" type="CPUParticles2D" unique_id=1151170088]
+show_behind_parent = true
+amount = 5
+lifetime = 0.72
+direction = Vector2(1, 1)
+spread = 35.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 222.22
+scale_amount_max = 10.26
