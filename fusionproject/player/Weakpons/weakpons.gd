@@ -16,3 +16,4 @@ func atirar():
 	bala.rotation_degrees = spread
 	if bala:
 		get_tree().current_scene.add_child(bala)
+	print("dou o toba")
