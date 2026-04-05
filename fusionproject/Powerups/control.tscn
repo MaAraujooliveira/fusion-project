@@ -11,6 +11,7 @@ offset_bottom = 40.0
 script = ExtResource("1_r2oxj")
 
 [node name="Button" type="Button" parent="." unique_id=1846765825 groups=["powerupbutton"]]
+process_mode = 3
 layout_mode = 0
 offset_left = 190.0
 offset_top = -110.0
@@ -20,6 +21,7 @@ text = "button2"
 text_overrun_behavior = 3
 
 [node name="Button2" type="Button" parent="." unique_id=1007911489 groups=["powerupbutton"]]
+process_mode = 3
 layout_mode = 0
 offset_left = 45.0
 offset_top = -110.0
@@ -28,6 +30,7 @@ offset_bottom = 110.0
 text = "button"
 
 [node name="Button3" type="Button" parent="." unique_id=2004810777 groups=["powerupbutton"]]
+process_mode = 3
 layout_mode = 0
 offset_left = 337.0
 offset_top = -110.0

@@ -15,6 +15,10 @@ run/main_scene="uid://dw8cx41xlqoqs"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.svg"
 
+[autoload]
+
+BuffManager="*uid://22olrsmrdd45"
+
 [display]
 
 window/size/mode=2

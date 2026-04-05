@@ -5,12 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://bxifcn5xqxs6" path="res://player/Weakpons/Weakpns.tscn" id="3_83hs8"]
 [ext_resource type="PackedScene" uid="uid://csfsq12lgiuix" path="res://player/Stats/PlayerStats.tscn" id="3_wnvi2"]
 [ext_resource type="PackedScene" uid="uid://d37xjxu4qg5nd" path="res://Bala/bala.tscn" id="4_x8kxw"]
+[ext_resource type="PackedScene" uid="uid://b2pc46ugo2dwf" path="res://Powerups/control.tscn" id="6_aqcbf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_83hs8"]
 radius = 24.020824
 
-[node name="Player" type="CharacterBody2D" unique_id=1938843242 node_paths=PackedStringArray("weakpons", "stats") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1938843242 node_paths=PackedStringArray("buff", "weakpons", "stats") groups=["Player"]]
 script = ExtResource("1_3c3w1")
+buff = NodePath("Control")
 weakpons = NodePath("Weakpns")
 stats = NodePath("PlayerStats")
 
@@ -42,3 +44,10 @@ player = NodePath("..")
 stats = NodePath("../PlayerStats")
 
 [node name="PlayerStats" parent="." unique_id=520496112 instance=ExtResource("3_wnvi2")]
+
+[node name="Control" parent="." unique_id=369149832 node_paths=PackedStringArray("player", "player_stats") instance=ExtResource("6_aqcbf")]
+visible = false
+offset_left = -258.0
+offset_right = -218.0
+player = NodePath("..")
+player_stats = NodePath("../PlayerStats")

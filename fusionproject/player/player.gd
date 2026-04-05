@@ -1,7 +1,11 @@
 extends CharacterBody2D
 
+@export var buff : Buff
 @export var weakpons : Weakpons
 @export var stats : PlayerStats
+
+func _ready() -> void:
+	buff.mostrar_ui()
 
 func _physics_process(delta: float) -> void:
 	var dir = Vector2(Input.get_axis("A","D"),Input.get_axis("W","S"))

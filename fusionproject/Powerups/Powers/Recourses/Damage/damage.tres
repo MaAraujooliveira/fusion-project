@@ -1,0 +1,10 @@
+[gd_resource type="Resource" format=3 uid="uid://bt4r8r52rga2q"]
+
+[ext_resource type="Script" uid="uid://8do3rksuyq06" path="res://Powerups/Powers/Damage/powers.gd" id="1_ynxor"]
+
+[resource]
+script = ExtResource("1_ynxor")
+Name = "Afiar os sentidos"
+buff = 2.0
+description = "Afie seus sentidos para aumnetar eu dano"
+metadata/_custom_type_script = "uid://d20olrunc6omh"

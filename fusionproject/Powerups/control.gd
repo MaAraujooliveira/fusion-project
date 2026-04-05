@@ -1,19 +1,34 @@
 extends Control
+class_name Buff
+
+@export var player : CharacterBody2D
+@export var player_stats : PlayerStats
+
+var buttons : Array
 
 func _ready() -> void:
-	# Conecta os sinais dos botões às funções
-	$Button.pressed.connect(_on_button_pressed)
-	$Button2.pressed.connect(_on_button2_pressed)
-	$Button3.pressed.connect(_on_button3_pressed)
+	buttons = get_tree().get_nodes_in_group("powerupbutton")
 
-func _on_button_pressed() -> void:
-	print("Button 1 clicado")
 
-func _on_button2_pressed() -> void:
-	print("Button 2 clicado")
+func mostrar_ui():
+	visible = true
+	get_tree().paused = true
+	
+	var buffs = BuffManager.pick_random_buff(3)
+	
+	for i in range(min(buffs.size(), buttons.size())):
+		var button = buttons[i]
+		var buff = buffs[i]
+		
+		button.text = buff["Name"]
+		
+		for c in button.pressed.get_connections():
+			button.pressed.disconnect(c.callable)
+		
+		button.pressed.connect(func(): aplicar_buff(buff))
 
-func _on_button3_pressed() -> void:
-	print("Button 3 clicado")
 
-func _process(delta: float) -> void:
-	pass
+func aplicar_buff(buff):
+	buff.aplicar(player, player_stats)
+	visible = false
+	get_tree().paused = false

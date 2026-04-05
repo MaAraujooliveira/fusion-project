@@ -36,6 +36,6 @@ func atirar(dir: Vector2, qtd: int):
 		var new_dir = dir.rotated(angle_offset)
 		
 		bala.global_position = global_position
-		bala.iniciar(stats.speed, stats.damage, new_dir)
+		bala.iniciar(stats.speed, stats.damage, new_dir,"BalaPlayer","Enemy")
 		
 		get_tree().current_scene.add_child(bala)
