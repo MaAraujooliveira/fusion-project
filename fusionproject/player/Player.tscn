@@ -46,8 +46,9 @@ stats = NodePath("../PlayerStats")
 [node name="PlayerStats" parent="." unique_id=520496112 instance=ExtResource("3_wnvi2")]
 
 [node name="Control" parent="." unique_id=369149832 node_paths=PackedStringArray("player", "player_stats") instance=ExtResource("6_aqcbf")]
-visible = false
-offset_left = -258.0
-offset_right = -218.0
+offset_left = -364.0
+offset_top = 34.0
+offset_right = -324.0
+offset_bottom = 74.0
 player = NodePath("..")
 player_stats = NodePath("../PlayerStats")

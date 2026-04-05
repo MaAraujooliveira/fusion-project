@@ -13,27 +13,32 @@ script = ExtResource("1_r2oxj")
 [node name="Button" type="Button" parent="." unique_id=1846765825 groups=["powerupbutton"]]
 process_mode = 3
 layout_mode = 0
-offset_left = 190.0
-offset_top = -110.0
-offset_right = 326.0
-offset_bottom = 110.0
-text = "button2"
-text_overrun_behavior = 3
+offset_left = 88.0
+offset_top = -487.0
+offset_right = 224.0
+offset_bottom = -267.0
+scale = Vector2(4, 4)
+text = "Power2"
+autowrap_mode = 3
 
 [node name="Button2" type="Button" parent="." unique_id=1007911489 groups=["powerupbutton"]]
 process_mode = 3
 layout_mode = 0
-offset_left = 45.0
-offset_top = -110.0
-offset_right = 181.0
-offset_bottom = 110.0
-text = "button"
+offset_left = -572.0
+offset_top = -487.0
+offset_right = -436.0
+offset_bottom = -267.0
+scale = Vector2(4, 4)
+text = "Power1"
+autowrap_mode = 3
 
 [node name="Button3" type="Button" parent="." unique_id=2004810777 groups=["powerupbutton"]]
 process_mode = 3
 layout_mode = 0
-offset_left = 337.0
-offset_top = -110.0
-offset_right = 473.0
-offset_bottom = 110.0
-text = "button3"
+offset_left = 772.0
+offset_top = -487.0
+offset_right = 908.0
+offset_bottom = -267.0
+scale = Vector2(4, 4)
+text = "Power3"
+autowrap_mode = 3

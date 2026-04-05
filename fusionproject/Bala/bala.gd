@@ -24,4 +24,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body.is_in_group(alvo):
+		var enemy_stats := body.get_node("EnemyStats") as EnemyStats
+		enemy_stats.take_damage(damage)
+		queue_free()
