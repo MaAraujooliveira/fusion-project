@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var weakpons : Weakpons
 @export var stats : PlayerStats
 
 func _physics_process(delta: float) -> void:
@@ -15,3 +16,9 @@ func _physics_process(delta: float) -> void:
 	
 	
 	move_and_slide()
+
+func _process(delta: float) -> void:
+	weakpons.timer_arma += delta
+	if Input.is_action_pressed("shoot") and weakpons.timer_arma >= weakpons.cooldown:
+		var final_dir = (get_global_mouse_position() - global_position )
+		weakpons.atirar(final_dir,3)

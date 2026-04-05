@@ -2,13 +2,16 @@
 
 [ext_resource type="Script" uid="uid://c00kwxowslcul" path="res://player/player.gd" id="1_3c3w1"]
 [ext_resource type="Texture2D" uid="uid://b28xixmncxlot" path="res://player/player.png" id="2_wnvi2"]
+[ext_resource type="PackedScene" uid="uid://bxifcn5xqxs6" path="res://player/Weakpons/Weakpns.tscn" id="3_83hs8"]
 [ext_resource type="PackedScene" uid="uid://csfsq12lgiuix" path="res://player/Stats/PlayerStats.tscn" id="3_wnvi2"]
+[ext_resource type="PackedScene" uid="uid://d37xjxu4qg5nd" path="res://Bala/bala.tscn" id="4_x8kxw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_83hs8"]
 radius = 24.020824
 
-[node name="Player" type="CharacterBody2D" unique_id=1938843242 node_paths=PackedStringArray("stats") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1938843242 node_paths=PackedStringArray("weakpons", "stats") groups=["Player"]]
 script = ExtResource("1_3c3w1")
+weakpons = NodePath("Weakpns")
 stats = NodePath("PlayerStats")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=831078042]
@@ -18,8 +21,6 @@ texture = ExtResource("2_wnvi2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=703128855]
 position = Vector2(4, 17)
 shape = SubResource("CircleShape2D_83hs8")
-
-[node name="PlayerStats" parent="." unique_id=520496112 instance=ExtResource("3_wnvi2")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=301180834]
 zoom = Vector2(0.5, 0.5)
@@ -34,3 +35,10 @@ spread = 35.0
 gravity = Vector2(0, 0)
 initial_velocity_max = 222.22
 scale_amount_max = 10.26
+
+[node name="Weakpns" parent="." unique_id=103949153 node_paths=PackedStringArray("player", "stats") instance=ExtResource("3_83hs8")]
+bala_scene = ExtResource("4_x8kxw")
+player = NodePath("..")
+stats = NodePath("../PlayerStats")
+
+[node name="PlayerStats" parent="." unique_id=520496112 instance=ExtResource("3_wnvi2")]

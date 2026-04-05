@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bxifcn5xqxs6"]
+
+[ext_resource type="Script" uid="uid://cykt81i13jv8j" path="res://player/Weakpons/weakpons.gd" id="1_ak5pm"]
+
+[node name="Weakpns" type="Node2D" unique_id=103949153]
+script = ExtResource("1_ak5pm")

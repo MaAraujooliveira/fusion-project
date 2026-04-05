@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d37xjxu4qg5nd"]
+
+[ext_resource type="Script" uid="uid://b6g6p3dd2icqh" path="res://Bala/bala.gd" id="1_kdvvt"]
+[ext_resource type="Texture2D" uid="uid://cs2nf3rabirty" path="res://Bala/Bala.png" id="1_ugrv2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdvvt"]
+radius = 32.01562
+
+[node name="Bala" type="Area2D" unique_id=1562553599]
+script = ExtResource("1_kdvvt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1052165493]
+scale = Vector2(4, 4)
+texture = ExtResource("1_ugrv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1409253931]
+shape = SubResource("CircleShape2D_kdvvt")
