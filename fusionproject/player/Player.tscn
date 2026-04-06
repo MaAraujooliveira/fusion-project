@@ -3,15 +3,19 @@
 [ext_resource type="Script" uid="uid://c00kwxowslcul" path="res://player/player.gd" id="1_3c3w1"]
 [ext_resource type="Texture2D" uid="uid://b28xixmncxlot" path="res://player/player.png" id="2_wnvi2"]
 [ext_resource type="PackedScene" uid="uid://bxifcn5xqxs6" path="res://player/Weakpons/Weakpns.tscn" id="3_83hs8"]
+[ext_resource type="Script" uid="uid://cd8afx8mi5h3a" path="res://player/camera_shake.gd" id="3_mhpjh"]
 [ext_resource type="PackedScene" uid="uid://csfsq12lgiuix" path="res://player/Stats/PlayerStats.tscn" id="3_wnvi2"]
 [ext_resource type="PackedScene" uid="uid://d37xjxu4qg5nd" path="res://Bala/bala.tscn" id="4_x8kxw"]
 [ext_resource type="PackedScene" uid="uid://b2pc46ugo2dwf" path="res://Powerups/control.tscn" id="6_aqcbf"]
+[ext_resource type="Texture2D" uid="uid://cntqcme433ufj" path="res://player/arma.png" id="7_06mnu"]
+[ext_resource type="Script" uid="uid://c8w4cxgm8pmvf" path="res://player/sprite_2d_2.gd" id="8_mhpjh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_83hs8"]
 radius = 24.020824
 
-[node name="Player" type="CharacterBody2D" unique_id=1938843242 node_paths=PackedStringArray("buff", "weakpons", "stats") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1938843242 node_paths=PackedStringArray("camera", "buff", "weakpons", "stats") groups=["Player"]]
 script = ExtResource("1_3c3w1")
+camera = NodePath("Camera2D")
 buff = NodePath("Control")
 weakpons = NodePath("Weakpns")
 stats = NodePath("PlayerStats")
@@ -26,6 +30,7 @@ shape = SubResource("CircleShape2D_83hs8")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=301180834]
 zoom = Vector2(0.5, 0.5)
+script = ExtResource("3_mhpjh")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=740002375]
 show_behind_parent = true
@@ -38,6 +43,19 @@ gravity = Vector2(0, 0)
 initial_velocity_max = 222.22
 scale_amount_max = 10.26
 
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="." unique_id=1562718496]
+show_behind_parent = true
+position = Vector2(4, 31)
+emitting = false
+amount = 45
+lifetime = 0.72
+direction = Vector2(1, 1)
+spread = 59.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 222.22
+scale_amount_max = 21.62
+color = Color(0.55810267, 0.30513573, 9.62615e-08, 1)
+
 [node name="Weakpns" parent="." unique_id=103949153 node_paths=PackedStringArray("player", "stats") instance=ExtResource("3_83hs8")]
 recuo = 1
 bala_scene = ExtResource("4_x8kxw")
@@ -45,6 +63,7 @@ player = NodePath("..")
 stats = NodePath("../PlayerStats")
 
 [node name="PlayerStats" parent="." unique_id=520496112 instance=ExtResource("3_wnvi2")]
+bullet_speed = 1250
 
 [node name="Control" parent="." unique_id=369149832 node_paths=PackedStringArray("player", "player_stats") instance=ExtResource("6_aqcbf")]
 visible = false
@@ -54,3 +73,11 @@ offset_right = -324.0
 offset_bottom = 74.0
 player = NodePath("..")
 player_stats = NodePath("../PlayerStats")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1713708459 node_paths=PackedStringArray("player")]
+position = Vector2(-70, 10.000001)
+scale = Vector2(5, 5)
+texture = ExtResource("7_06mnu")
+script = ExtResource("8_mhpjh")
+player = NodePath("..")
+radius = 75.0

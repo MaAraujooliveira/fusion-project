@@ -21,7 +21,7 @@ func atirar(dir: Vector2, qtd: int):
 	timer_arma = 0
 	player.recoil_velocity -= dir * recuo
 	
-	var spread_total = 30.0 # graus
+	var spread_total = 15.0 # graus
 	
 	for i in range(qtd):
 		if not bala_scene:
