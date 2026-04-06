@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://pnrjc3smk5ma"]
+
+[ext_resource type="Script" uid="uid://caiiydmqlq7qe" path="res://Torretas/TurretStats/turret_stats.gd" id="1_ujm3w"]
+
+[node name="TurretStats" type="Node" unique_id=1815134278]
+script = ExtResource("1_ujm3w")

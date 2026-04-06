@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://0156xv4iqslk"]
+
+[ext_resource type="Script" uid="uid://c6ak2inf3hqcx" path="res://Powerups/Powers/Bullet_qtd/bullet_qtd.gd" id="1_gl4sh"]
+
+[resource]
+script = ExtResource("1_gl4sh")
+Name = "Quanto mais melhor"
+buff = 1.0
+description = "Aumentar a quantidde de tiros é sempre bom"

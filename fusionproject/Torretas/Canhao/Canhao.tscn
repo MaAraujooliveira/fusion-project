@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://c1gy802n2pqsr"]
+
+[ext_resource type="Script" uid="uid://c6iw57ngrv0qe" path="res://Torretas/Canhao/canhao.gd" id="1_8ybl1"]
+[ext_resource type="PackedScene" uid="uid://c8h2kkugrdmj" path="res://Torretas/GetEnemy/get_enemy_dist.tscn" id="1_df650"]
+[ext_resource type="PackedScene" uid="uid://pnrjc3smk5ma" path="res://Torretas/TurretStats/turret_stats.tscn" id="2_owwf6"]
+[ext_resource type="PackedScene" uid="uid://hngpkj884g2g" path="res://Torretas/TurretAttacks/TurretAttack.tscn" id="3_owwf6"]
+[ext_resource type="Texture2D" uid="uid://bqpsryp366qgv" path="res://Torretas/Canhao/canhao.png" id="5_1u5jn"]
+[ext_resource type="PackedScene" uid="uid://d37xjxu4qg5nd" path="res://Bala/bala.tscn" id="5_gcbsp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gcbsp"]
+radius = 125.035995
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sv21v"]
+radius = 55.0
+
+[node name="Canhao" type="Node2D" unique_id=1245487388 node_paths=PackedStringArray("stats", "distance", "weakpons")]
+script = ExtResource("1_8ybl1")
+stats = NodePath("TurretStats")
+distance = NodePath("GetEnemyDist2")
+weakpons = NodePath("TurretAttack")
+
+[node name="GetEnemyDist2" parent="." unique_id=1757186048 node_paths=PackedStringArray("turret", "turret_stats") instance=ExtResource("1_df650")]
+turret = NodePath("..")
+turret_stats = NodePath("../TurretStats")
+
+[node name="TurretStats" parent="." unique_id=1815134278 instance=ExtResource("2_owwf6")]
+speed = 1250.0
+damage = 2.0
+range = 256.0
+
+[node name="TurretAttack" parent="." unique_id=1113034071 node_paths=PackedStringArray("turret", "stats") instance=ExtResource("3_owwf6")]
+bala_scene = ExtResource("5_gcbsp")
+turret = NodePath(".")
+stats = NodePath("../TurretStats")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2089206671]
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("5_1u5jn")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=379165192]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1753751773]
+shape = SubResource("CircleShape2D_gcbsp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=430024945]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1378588437]
+shape = SubResource("CircleShape2D_sv21v")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

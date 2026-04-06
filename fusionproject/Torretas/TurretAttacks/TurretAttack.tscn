@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://hngpkj884g2g"]
+
+[ext_resource type="Script" uid="uid://dv3w064t1eqt" path="res://Torretas/TurretAttacks/TurretAttacks.gd" id="1_gykai"]
+
+[node name="TurretAttack" type="Node2D" unique_id=1113034071]
+script = ExtResource("1_gykai")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c8h2kkugrdmj"]
+
+[ext_resource type="Script" uid="uid://bfscxpkp7mht4" path="res://Torretas/GetEnemy/get_enemy.gd" id="1_qm43i"]
+
+[node name="GetEnemyDist" type="Node" unique_id=1757186048]
+script = ExtResource("1_qm43i")

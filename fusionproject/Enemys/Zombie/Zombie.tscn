@@ -23,7 +23,8 @@ stats = NodePath("../EnemyStats")
 enemy = NodePath("..")
 walk_par = NodePath("../CPUParticles2D2")
 
-[node name="EnemyStats" parent="." unique_id=1969344054 node_paths=PackedStringArray("enemy") instance=ExtResource("3_shyxk")]
+[node name="EnemyStats" parent="." unique_id=1969344054 node_paths=PackedStringArray("enemy", "enemy_sprite") instance=ExtResource("3_shyxk")]
 enemy = NodePath("..")
+enemy_sprite = NodePath("../Sprite2D")
 
 [node name="CPUParticles2D2" parent="." unique_id=1151170088 instance=ExtResource("4_e5qiq")]

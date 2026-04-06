@@ -26,7 +26,14 @@ func mostrar_ui():
 			button.pressed.disconnect(c.callable)
 		
 		button.pressed.connect(func(): aplicar_buff(buff))
+		button.mouse_entered.connect(func(): show_buff_description(buff))
+		button.mouse_exited.connect(func(): show_buff_description(buff))
 
+func show_buff_description(buff):
+	$Label.text = buff["description"]
+
+func hide_description():
+	$Label.text = ""
 
 func aplicar_buff(buff):
 	buff.aplicar(player, player_stats)
