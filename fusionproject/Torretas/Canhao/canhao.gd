@@ -13,7 +13,6 @@ func seguir_mouse():
 	if Input.is_action_just_pressed("PlaceTower"):
 		global_position = global_position
 		on_spawned = true
-
 func _process(delta: float) -> void:
 	seguir_mouse()
 	if not on_spawned:return
@@ -27,6 +26,9 @@ func _process(delta: float) -> void:
 			weakpons.atirar(final_dir, 1)
 	if target:
 		look_at(target.global_position)
+	
+	if Input.is_action_just_pressed("escluirTurret") and on_mouse:
+		queue_free()
 	
 func _draw():
 	if not on_mouse:

@@ -41,10 +41,7 @@ func add_to_ui():
 func _on_card_pressed():
 	if not using_card:
 		return
-	
-	var center = get_viewport().get_visible_rect().size / 2
-	Input.warp_mouse(center)
-	
+
 	using_card = false
 	
 	# 🚫 bloqueia TODAS as cartas

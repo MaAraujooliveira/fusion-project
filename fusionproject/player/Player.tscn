@@ -128,6 +128,7 @@ bullet_speed = 1250
 picked_qtd = 10
 
 [node name="Control" parent="." unique_id=369149832 node_paths=PackedStringArray("player", "cards", "player_stats") instance=ExtResource("6_aqcbf")]
+visible = false
 offset_left = -292.0
 offset_top = 40.0
 offset_right = -252.0
@@ -137,7 +138,7 @@ cards = NodePath("../cardsManager")
 player_stats = NodePath("../PlayerStats")
 
 [node name="Weakpons" parent="." unique_id=103949153 node_paths=PackedStringArray("player", "stats") instance=ExtResource("3_83hs8")]
-recuo = 1
+recuo = 2
 bala_scene = ExtResource("4_x8kxw")
 player = NodePath("..")
 stats = NodePath("../PlayerStats")

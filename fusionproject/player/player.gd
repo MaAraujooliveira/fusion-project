@@ -10,8 +10,6 @@ func _ready() -> void:
 	$Label.text = "Municoes : " + str(weakpons.municoes_ativas) + " / " + str(weakpons.max_municoes)
 	$ProgressBar.max_value = stats.max_hp
 	$ProgressBar.value = stats.hp
-	
-	buff.mostrar_ui()
 
 func _physics_process(delta: float) -> void:
 	var input_dir = Vector2(
