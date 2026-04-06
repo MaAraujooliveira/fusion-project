@@ -2,6 +2,7 @@ extends Control
 class_name Buff
 
 @export var player : CharacterBody2D
+@export var cards : Cards_manager
 @export var player_stats : PlayerStats
 
 var buttons : Array
@@ -36,6 +37,7 @@ func hide_description():
 	$Label.text = ""
 
 func aplicar_buff(buff):
+	cards.add_to_ui()
 	buff.aplicar(player, player_stats)
 	visible = false
 	get_tree().paused = false

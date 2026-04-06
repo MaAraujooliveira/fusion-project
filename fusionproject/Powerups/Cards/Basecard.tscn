@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bw7gsrdykhffy"]
+
+[ext_resource type="Script" uid="uid://bjvvj651bcksm" path="res://card.gd" id="1_hvaon"]
+
+[node name="Card" type="Button" unique_id=474845275]
+offset_right = 91.0
+offset_bottom = 137.0
+script = ExtResource("1_hvaon")

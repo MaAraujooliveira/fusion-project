@@ -6,6 +6,11 @@ class_name Weakpons
 @export var player : CharacterBody2D
 @export var stats : PlayerStats
 
+var municoes := INF
+var max_municoes := 5
+var municoes_ativas := 5
+var min_municoes := 0
+
 var timer_arma := 0.0
 var cooldown := 1.5
 
@@ -13,15 +18,19 @@ var cooldown := 1.5
 func _process(delta):
 	timer_arma += delta
 
+func recaregar():
+	municoes_ativas = max_municoes
 
 func atirar(dir: Vector2, qtd: int):
-	if timer_arma < cooldown:
-		return
+	if timer_arma < cooldown:return
+	if municoes_ativas <= min_municoes:return
 	
 	timer_arma = 0
 	player.recoil_velocity -= dir * recuo
+	municoes_ativas -= 1
 	
 	var spread_total = 15.0 # graus
+	
 	
 	for i in range(qtd):
 		if not bala_scene:

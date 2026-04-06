@@ -16,4 +16,10 @@ texture = ExtResource("1_ugrv2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1409253931]
 shape = SubResource("CircleShape2D_kdvvt")
 
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=474088018]
+scale = Vector2(4, 4)
+energy = 1.54
+blend_mode = 2
+texture = ExtResource("1_ugrv2")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

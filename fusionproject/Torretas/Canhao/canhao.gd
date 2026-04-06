@@ -5,16 +5,29 @@ extends Node2D
 @export var weakpons : WeakponsTurret
 
 var on_mouse := false
+var on_spawned := false
+
+func seguir_mouse():
+	if not on_spawned:
+		global_position = get_global_mouse_position()
+	if Input.is_action_just_pressed("PlaceTower"):
+		global_position = global_position
+		on_spawned = true
+
 func _process(delta: float) -> void:
+	seguir_mouse()
+	if not on_spawned:return
+	var target = distance.find_target()
 	if on_mouse:
 		queue_redraw()
 	weakpons.timer_arma += delta
 	if weakpons.timer_arma >= weakpons.cooldown:
-		var target = distance.find_target()
 		if target:
 			var final_dir = (target.global_position - global_position).normalized()
-			weakpons.atirar(final_dir, 3)
-
+			weakpons.atirar(final_dir, 1)
+	if target:
+		look_at(target.global_position)
+	
 func _draw():
 	if not on_mouse:
 		return

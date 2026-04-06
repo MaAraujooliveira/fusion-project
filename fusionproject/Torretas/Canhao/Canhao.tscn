@@ -10,10 +10,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_gcbsp"]
 radius = 125.035995
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sv21v"]
-radius = 55.0
-
 [node name="Canhao" type="Node2D" unique_id=1245487388 node_paths=PackedStringArray("stats", "distance", "weakpons")]
+z_index = -1
 script = ExtResource("1_8ybl1")
 stats = NodePath("TurretStats")
 distance = NodePath("GetEnemyDist2")
@@ -42,11 +40,6 @@ texture = ExtResource("5_1u5jn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1753751773]
 shape = SubResource("CircleShape2D_gcbsp")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=430024945]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1378588437]
-shape = SubResource("CircleShape2D_sv21v")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

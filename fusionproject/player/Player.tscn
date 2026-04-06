@@ -9,15 +9,56 @@
 [ext_resource type="PackedScene" uid="uid://b2pc46ugo2dwf" path="res://Powerups/control.tscn" id="6_aqcbf"]
 [ext_resource type="Texture2D" uid="uid://cntqcme433ufj" path="res://player/arma.png" id="7_06mnu"]
 [ext_resource type="Script" uid="uid://c8w4cxgm8pmvf" path="res://player/sprite_2d_2.gd" id="8_mhpjh"]
+[ext_resource type="Script" uid="uid://dtbcojrgbri8u" path="res://player/cards_manager.gd" id="10_ndjxb"]
+[ext_resource type="PackedScene" uid="uid://bw7gsrdykhffy" path="res://Powerups/Cards/Basecard.tscn" id="11_5qrx2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_83hs8"]
 radius = 24.020824
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mhpjh"]
+radius = 26.019224
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhpjh"]
+bg_color = Color(0.7490196, 0, 0.2, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndjxb"]
+bg_color = Color(0.19215687, 0.8666667, 0.49019608, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qrx2"]
+bg_color = Color(0.5615118, 0.10902942, 0.3254505, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
 [node name="Player" type="CharacterBody2D" unique_id=1938843242 node_paths=PackedStringArray("camera", "buff", "weakpons", "stats") groups=["Player"]]
 script = ExtResource("1_3c3w1")
 camera = NodePath("Camera2D")
 buff = NodePath("Control")
-weakpons = NodePath("Weakpns")
+weakpons = NodePath("Weakpons")
 stats = NodePath("PlayerStats")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=831078042]
@@ -56,28 +97,88 @@ initial_velocity_max = 222.22
 scale_amount_max = 21.62
 color = Color(0.55810267, 0.30513573, 9.62615e-08, 1)
 
-[node name="Weakpns" parent="." unique_id=103949153 node_paths=PackedStringArray("player", "stats") instance=ExtResource("3_83hs8")]
-recuo = 1
-bala_scene = ExtResource("4_x8kxw")
-player = NodePath("..")
-stats = NodePath("../PlayerStats")
-
-[node name="PlayerStats" parent="." unique_id=520496112 instance=ExtResource("3_wnvi2")]
-bullet_speed = 1250
-
-[node name="Control" parent="." unique_id=369149832 node_paths=PackedStringArray("player", "player_stats") instance=ExtResource("6_aqcbf")]
-visible = false
-offset_left = -364.0
-offset_top = 34.0
-offset_right = -324.0
-offset_bottom = 74.0
-player = NodePath("..")
-player_stats = NodePath("../PlayerStats")
-
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1713708459 node_paths=PackedStringArray("player")]
 position = Vector2(-70, 10.000001)
 scale = Vector2(5, 5)
 texture = ExtResource("7_06mnu")
 script = ExtResource("8_mhpjh")
 player = NodePath("..")
-radius = 75.0
+
+[node name="Label" type="Label" parent="." unique_id=1808054223]
+offset_left = 340.0
+offset_top = -648.0
+offset_right = 1133.0
+offset_bottom = -432.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 85
+text = "10/INF"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=716946351]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2086861656]
+position = Vector2(4, 17)
+shape = SubResource("CircleShape2D_mhpjh")
+
+[node name="PlayerStats" parent="." unique_id=520496112 node_paths=PackedStringArray("sprite") instance=ExtResource("3_wnvi2")]
+hp = 35.0
+sprite = NodePath("../Sprite2D")
+bullet_speed = 1250
+picked_qtd = 10
+
+[node name="Control" parent="." unique_id=369149832 node_paths=PackedStringArray("player", "cards", "player_stats") instance=ExtResource("6_aqcbf")]
+offset_left = -292.0
+offset_top = 40.0
+offset_right = -252.0
+offset_bottom = 80.0
+player = NodePath("..")
+cards = NodePath("../cardsManager")
+player_stats = NodePath("../PlayerStats")
+
+[node name="Weakpons" parent="." unique_id=103949153 node_paths=PackedStringArray("player", "stats") instance=ExtResource("3_83hs8")]
+recuo = 1
+bala_scene = ExtResource("4_x8kxw")
+player = NodePath("..")
+stats = NodePath("../PlayerStats")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2022590308]
+offset_left = -1124.0
+offset_top = -627.0
+offset_right = -456.0
+offset_bottom = -509.0
+theme_override_styles/background = SubResource("StyleBoxFlat_mhpjh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ndjxb")
+value = 22.0
+show_percentage = false
+
+[node name="GraphFrame" type="GraphFrame" parent="." unique_id=1218481767]
+offset_left = -1011.0
+offset_top = 298.0
+offset_right = 998.0
+offset_bottom = 620.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5qrx2")
+
+[node name="cardsManager" type="HBoxContainer" parent="." unique_id=838978963 node_paths=PackedStringArray("stats")]
+offset_left = -936.0
+offset_top = 362.0
+offset_right = 951.0
+offset_bottom = 597.0
+theme_override_constants/separation = 25
+alignment = 1
+script = ExtResource("10_ndjxb")
+cards_ui_scene = ExtResource("11_5qrx2")
+stats = NodePath("../PlayerStats")
+
+[node name="Label2" type="Label" parent="." unique_id=1486301069]
+offset_left = -259.0
+offset_top = 219.0
+offset_right = 257.0
+offset_bottom = 322.0
+theme_override_colors/font_color = Color(0.64705884, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+text = "CARTAS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

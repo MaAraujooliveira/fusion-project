@@ -19,7 +19,7 @@ func atirar(dir: Vector2, qtd: int):
 	
 	timer_arma = 0
 	
-	var spread_total = 30.0 # graus
+	var spread_total = 12.5 # graus
 	
 	for i in range(qtd):
 		if not bala_scene:
