@@ -54,12 +54,13 @@ corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
-[node name="Player" type="CharacterBody2D" unique_id=1938843242 node_paths=PackedStringArray("camera", "buff", "weakpons", "stats") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1938843242 node_paths=PackedStringArray("camera", "buff", "weakpons", "stats", "cards") groups=["Player"]]
 script = ExtResource("1_3c3w1")
 camera = NodePath("Camera2D")
 buff = NodePath("Control")
 weakpons = NodePath("Weakpons")
 stats = NodePath("PlayerStats")
+cards = NodePath("cardsManager")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=831078042]
 scale = Vector2(7, 7)
@@ -125,7 +126,6 @@ shape = SubResource("CircleShape2D_mhpjh")
 hp = 35.0
 sprite = NodePath("../Sprite2D")
 bullet_speed = 1250
-picked_qtd = 10
 
 [node name="Control" parent="." unique_id=369149832 node_paths=PackedStringArray("player", "cards", "player_stats") instance=ExtResource("6_aqcbf")]
 visible = false

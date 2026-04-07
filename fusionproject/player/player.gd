@@ -4,12 +4,17 @@ extends CharacterBody2D
 @export var buff : Buff
 @export var weakpons : Weakpons
 @export var stats : PlayerStats
+@export var cards : Cards_manager
+
 var recoil_velocity := Vector2.ZERO
 
 func _ready() -> void:
 	$Label.text = "Municoes : " + str(weakpons.municoes_ativas) + " / " + str(weakpons.max_municoes)
 	$ProgressBar.max_value = stats.max_hp
 	$ProgressBar.value = stats.hp
+	
+	cards.add_to_ui()
+	
 
 func _physics_process(delta: float) -> void:
 	var input_dir = Vector2(
@@ -53,7 +58,7 @@ func _process(delta: float) -> void:
 		weakpons.atirar(final_dir,stats.bullets_qtd)
 		await get_tree().create_timer(0.25).timeout
 		$CPUParticles2D2.emitting = false
-	
+
 	if Input.is_action_just_pressed("Recaregar") and weakpons.municoes_ativas < weakpons.max_municoes:
 		set_physics_process(false)
 		weakpons.recaregar()
