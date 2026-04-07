@@ -2,12 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://bc8gwt4a0u05c" path="res://Base/Base.png" id="1_6elwd"]
 [ext_resource type="Script" uid="uid://b23gelmi1ytdk" path="res://Base/base.gd" id="1_h44yl"]
+[ext_resource type="PackedScene" uid="uid://0mapi8rcg5tr" path="res://Coins/coins.tscn" id="2_edygm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h44yl"]
 size = Vector2(100, 102)
 
 [node name="Base" type="Node2D" unique_id=1381480154]
 script = ExtResource("1_h44yl")
+coin_scene = ExtResource("2_edygm")
+spawn_radius = 750.0
+coin_amount = 2
+spawn_time = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=30089900]
 scale = Vector2(20, 20)

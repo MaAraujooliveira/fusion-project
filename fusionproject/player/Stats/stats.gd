@@ -9,6 +9,11 @@ class_name PlayerStats
 @export var bullets_qtd := 1
 @export var picked_qtd := 1
 
+@export var xp_bar : ProgressBar
+@export var ui : Buff
+
+var xp := 0
+var max_xp := 100
 var max_hp
 
 func _ready() -> void:
@@ -19,6 +24,22 @@ func take_damage(amount):
 	await piscar(Color.RED,0.25)
 	if hp <= 0:
 		get_tree().reload_current_scene()
+
+
+
+func add_xp(amount):
+	xp += amount
+	verificar_xp()
+	xp_bar.max_value = max_xp
+	xp_bar.value = xp
+
+func verificar_xp():
+	while xp >= max_xp:
+		xp -= max_xp
+		max_xp = clamp(100 + max_xp,1,2500)
+
+		if not ui.visible:
+			ui.mostrar_ui()
 
 func piscar(color,time):
 	sprite.modulate = color

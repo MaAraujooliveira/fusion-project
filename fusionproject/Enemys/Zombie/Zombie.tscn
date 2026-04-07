@@ -23,6 +23,8 @@ shape = SubResource("CircleShape2D_e5qiq")
 stats = NodePath("../EnemyStats")
 enemy = NodePath("..")
 walk_par = NodePath("../CPUParticles2D2")
+push_force = null
+min_dist = null
 
 [node name="EnemyStats" parent="." unique_id=1969344054 node_paths=PackedStringArray("enemy", "enemy_sprite") instance=ExtResource("3_shyxk")]
 enemy = NodePath("..")

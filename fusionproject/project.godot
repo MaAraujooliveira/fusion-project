@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Fusionproject"
-run/main_scene="uid://dw8cx41xlqoqs"
+run/main_scene="uid://dp8qyafl7sxp6"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.svg"
 

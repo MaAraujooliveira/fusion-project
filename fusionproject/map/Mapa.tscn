@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dp8qyafl7sxp6"]
+
+[ext_resource type="Script" uid="uid://bhxjyu3dsjinb" path="res://map/mapa.gd" id="1_tmbt0"]
+[ext_resource type="PackedScene" uid="uid://cg27w1tv1poxx" path="res://Base/Base.tscn" id="2_e6yns"]
+[ext_resource type="PackedScene" uid="uid://cf4w6qciqplv1" path="res://Enemys/Zombie/Zombie.tscn" id="2_r70gt"]
+[ext_resource type="PackedScene" uid="uid://ivjq82cpujvb" path="res://player/Player.tscn" id="4_r70gt"]
+
+[node name="Mapa" type="Node" unique_id=230410568 node_paths=PackedStringArray("player")]
+script = ExtResource("1_tmbt0")
+enemy_scene = ExtResource("2_r70gt")
+player = NodePath("Player")
+spawn_cooldown = 1.0
+
+[node name="Base" parent="." unique_id=1381480154 instance=ExtResource("2_e6yns")]
+position = Vector2(477, 194)
+
+[node name="Player" parent="." unique_id=1938843242 instance=ExtResource("4_r70gt")]

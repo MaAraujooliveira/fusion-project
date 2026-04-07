@@ -54,6 +54,30 @@ corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b32pr"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbkom"]
+bg_color = Color(0, 0.47058824, 1, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
 [node name="Player" type="CharacterBody2D" unique_id=1938843242 node_paths=PackedStringArray("camera", "buff", "weakpons", "stats", "cards") groups=["Player"]]
 script = ExtResource("1_3c3w1")
 camera = NodePath("Camera2D")
@@ -106,10 +130,11 @@ script = ExtResource("8_mhpjh")
 player = NodePath("..")
 
 [node name="Label" type="Label" parent="." unique_id=1808054223]
-offset_left = 340.0
-offset_top = -648.0
-offset_right = 1133.0
-offset_bottom = -432.0
+z_index = 3
+offset_left = 345.0
+offset_top = -497.0
+offset_right = 1138.0
+offset_bottom = -281.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 85
 text = "10/INF"
@@ -122,11 +147,13 @@ vertical_alignment = 1
 position = Vector2(4, 17)
 shape = SubResource("CircleShape2D_mhpjh")
 
-[node name="PlayerStats" parent="." unique_id=520496112 node_paths=PackedStringArray("sprite") instance=ExtResource("3_wnvi2")]
+[node name="PlayerStats" parent="." unique_id=520496112 node_paths=PackedStringArray("sprite", "xp_bar", "ui") instance=ExtResource("3_wnvi2")]
 hp = 35.0
 sprite = NodePath("../Sprite2D")
 bullet_speed = 1250
 picked_qtd = 3
+xp_bar = NodePath("../ProgressBar2")
+ui = NodePath("../Control")
 
 [node name="Control" parent="." unique_id=369149832 node_paths=PackedStringArray("player", "cards", "player_stats") instance=ExtResource("6_aqcbf")]
 visible = false
@@ -145,9 +172,10 @@ player = NodePath("..")
 stats = NodePath("../PlayerStats")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=2022590308]
-offset_left = -1124.0
+z_index = 3
+offset_left = 469.0
 offset_top = -627.0
-offset_right = -456.0
+offset_right = 1137.0
 offset_bottom = -509.0
 theme_override_styles/background = SubResource("StyleBoxFlat_mhpjh")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ndjxb")
@@ -155,6 +183,7 @@ value = 22.0
 show_percentage = false
 
 [node name="GraphFrame" type="GraphFrame" parent="." unique_id=1218481767]
+z_index = 3
 offset_left = -1011.0
 offset_top = 405.0
 offset_right = 998.0
@@ -162,6 +191,7 @@ offset_bottom = 620.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_5qrx2")
 
 [node name="cardsManager" type="HBoxContainer" parent="." unique_id=838978963 node_paths=PackedStringArray("stats")]
+z_index = 3
 offset_left = -936.0
 offset_top = 475.0
 offset_right = 951.0
@@ -173,6 +203,7 @@ cards_ui_scene = ExtResource("11_5qrx2")
 stats = NodePath("../PlayerStats")
 
 [node name="Label2" type="Label" parent="." unique_id=1486301069]
+z_index = 3
 offset_left = -259.0
 offset_top = 219.0
 offset_right = 257.0
@@ -182,5 +213,15 @@ theme_override_font_sizes/font_size = 75
 text = "CARTAS"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ProgressBar2" type="ProgressBar" parent="." unique_id=1297550177]
+offset_left = -1128.0
+offset_top = -625.0
+offset_right = 139.0
+offset_bottom = -492.0
+theme_override_styles/background = SubResource("StyleBoxFlat_b32pr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hbkom")
+value = 10.0
+show_percentage = false
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
