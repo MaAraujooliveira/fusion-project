@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ivjq82cpujvb" path="res://player/Player.tscn" id="2_yh4gp"]
 [ext_resource type="PackedScene" uid="uid://cf4w6qciqplv1" path="res://Enemys/Zombie/Zombie.tscn" id="3_yh4gp"]
 [ext_resource type="PackedScene" uid="uid://c1gy802n2pqsr" path="res://Torretas/Canhao/Canhao.tscn" id="4_nxocu"]
+[ext_resource type="PackedScene" uid="uid://cg27w1tv1poxx" path="res://Base/Base.tscn" id="5_4knn7"]
 
 [node name="Node" type="Node" unique_id=1475491321]
 
@@ -19,3 +20,6 @@ position = Vector2(832, 125)
 
 [node name="Canhao" parent="." unique_id=1245487388 instance=ExtResource("4_nxocu")]
 position = Vector2(281, -179)
+
+[node name="Base" parent="." unique_id=1381480154 instance=ExtResource("5_4knn7")]
+position = Vector2(382, 94)

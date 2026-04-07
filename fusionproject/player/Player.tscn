@@ -126,6 +126,7 @@ shape = SubResource("CircleShape2D_mhpjh")
 hp = 35.0
 sprite = NodePath("../Sprite2D")
 bullet_speed = 1250
+picked_qtd = 3
 
 [node name="Control" parent="." unique_id=369149832 node_paths=PackedStringArray("player", "cards", "player_stats") instance=ExtResource("6_aqcbf")]
 visible = false
@@ -155,14 +156,14 @@ show_percentage = false
 
 [node name="GraphFrame" type="GraphFrame" parent="." unique_id=1218481767]
 offset_left = -1011.0
-offset_top = 298.0
+offset_top = 405.0
 offset_right = 998.0
 offset_bottom = 620.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_5qrx2")
 
 [node name="cardsManager" type="HBoxContainer" parent="." unique_id=838978963 node_paths=PackedStringArray("stats")]
 offset_left = -936.0
-offset_top = 362.0
+offset_top = 475.0
 offset_right = 951.0
 offset_bottom = 597.0
 theme_override_constants/separation = 25

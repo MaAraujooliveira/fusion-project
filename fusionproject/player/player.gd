@@ -50,7 +50,7 @@ func _process(delta: float) -> void:
 	$ProgressBar.max_value = stats.max_hp
 	$ProgressBar.value = stats.hp
 	
-	if Input.is_action_pressed("shoot") and weakpons.timer_arma >= weakpons.cooldown:
+	if Input.is_action_pressed("shoot") and weakpons.timer_arma >= weakpons.cooldown  and weakpons.municoes_ativas > 0:
 		var final_dir = (get_global_mouse_position() - $Sprite2D2.global_position)
 		$CPUParticles2D2.direction = -final_dir
 		$CPUParticles2D2.emitting = true

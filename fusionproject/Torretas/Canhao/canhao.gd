@@ -41,7 +41,7 @@ func _draw():
 		TAU,
 		512,
 		Color.RED,
-		4
+		5
 	)
 
 func _on_area_2d_mouse_entered() -> void:
