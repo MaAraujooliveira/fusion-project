@@ -37,7 +37,7 @@ func hide_description():
 	$Label.text = ""
 
 func aplicar_buff(buff):
-	cards.add_to_ui()
+	cards.add_to_ui(true)
 	buff.aplicar(player, player_stats)
 	visible = false
 	get_tree().paused = false

@@ -10,7 +10,6 @@ class_name Base
 
 var timer := 0.0
 
-
 func take_damage(amount):
 	hp -= amount
 	if hp <= 0:
@@ -28,8 +27,11 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
 		var enemy_stats := body.get_node("EnemyStats") as EnemyStats
+		
+		if enemy_stats:
+			take_damage(enemy_stats.damage)
+		
 		body.queue_free()
-		take_damage(enemy_stats.damage)
 
 func spawn_coins():
 	for i in range(coin_amount):
@@ -39,3 +41,13 @@ func spawn_coins():
 		var coin = coin_scene.instantiate()
 		get_tree().current_scene.add_child(coin)
 		coin.global_position = global_position + offset
+		
+		# 💥 EFEITO BOUNCE
+		coin.scale = Vector2.ZERO
+		
+		var tween = create_tween()
+		tween.tween_property(coin, "scale", Vector2(1.3, 1.3), 0.45)\
+			.set_trans(Tween.TRANS_BACK)\
+			.set_ease(Tween.EASE_OUT)
+		
+		tween.tween_property(coin, "scale", Vector2(1, 1), 0.5)

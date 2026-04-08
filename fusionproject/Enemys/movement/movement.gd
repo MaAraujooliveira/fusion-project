@@ -12,13 +12,20 @@ var player : CharacterBody2D
 var target : Node2D
 
 
-func iniciar(b):
+func iniciar(b, multiplier):
 	base = b
+	
+	stats.speed *= (1 + multiplier * 0.15)
+	stats.damage *= (1 + multiplier * 0.15)
+	stats.hp *= (1 + multiplier * 0.15)
+	
+func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 	
 	# 🔥 escolhe alvo UMA VEZ
 	if randf() < 0.7:
-		target = base
+		if base:
+			target = base
 	else:
 		target = player
 

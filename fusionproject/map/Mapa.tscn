@@ -4,14 +4,72 @@
 [ext_resource type="PackedScene" uid="uid://cg27w1tv1poxx" path="res://Base/Base.tscn" id="2_e6yns"]
 [ext_resource type="PackedScene" uid="uid://cf4w6qciqplv1" path="res://Enemys/Zombie/Zombie.tscn" id="2_r70gt"]
 [ext_resource type="PackedScene" uid="uid://ivjq82cpujvb" path="res://player/Player.tscn" id="4_r70gt"]
+[ext_resource type="Texture2D" uid="uid://ckdclc3uh0jin" path="res://icon.svg" id="5_6gih8"]
+[ext_resource type="Texture2D" uid="uid://bxghif8olbwrq" path="res://map/Grama.png" id="6_don1c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_don1c"]
+size = Vector2(4675, 31991)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vbhl"]
+size = Vector2(44475.5, 3673)
 
 [node name="Mapa" type="Node" unique_id=230410568 node_paths=PackedStringArray("player")]
 script = ExtResource("1_tmbt0")
 enemy_scene = ExtResource("2_r70gt")
 player = NodePath("Player")
-spawn_cooldown = 1.0
+spawn_cooldown = 2.5
+spawn_radius = 1000.0
+min_spawn_radius = 750.0
 
 [node name="Base" parent="." unique_id=1381480154 instance=ExtResource("2_e6yns")]
 position = Vector2(477, 194)
 
 [node name="Player" parent="." unique_id=1938843242 instance=ExtResource("4_r70gt")]
+
+[node name="Parede" type="StaticBody2D" parent="." unique_id=1768837275]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parede" unique_id=1518671449]
+position = Vector2(-20401, 113.5)
+shape = SubResource("RectangleShape2D_don1c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Parede" unique_id=239222709]
+position = Vector2(19528, 61)
+shape = SubResource("RectangleShape2D_don1c")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Parede" unique_id=1669017843]
+position = Vector2(56, -14137)
+shape = SubResource("RectangleShape2D_2vbhl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Parede" unique_id=258171495]
+position = Vector2(0, 14436)
+shape = SubResource("RectangleShape2D_2vbhl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Parede" unique_id=1896036404]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-26626, -883.001)
+scale = Vector2(133.47266, 460.27344)
+texture = ExtResource("5_6gih8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parede" unique_id=375195221]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(25470, -243.00003)
+scale = Vector2(133.47266, 460.27344)
+texture = ExtResource("5_6gih8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Parede" unique_id=1360259767]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(681.50195, 20488.25)
+scale = Vector2(532.6954, 124.34765)
+texture = ExtResource("5_6gih8")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Parede" unique_id=1705354468]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-140, -20237.125)
+scale = Vector2(532.6954, 123.58008)
+texture = ExtResource("5_6gih8")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Parede" unique_id=734024772]
+z_index = -4
+position = Vector2(-611.2505, 68.24951)
+scale = Vector2(2198.9065, 1565.2813)
+texture = ExtResource("6_don1c")

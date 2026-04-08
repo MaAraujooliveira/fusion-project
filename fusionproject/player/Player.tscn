@@ -43,7 +43,7 @@ corner_radius_bottom_right = 22
 corner_radius_bottom_left = 22
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qrx2"]
-bg_color = Color(0.5615118, 0.10902942, 0.3254505, 1)
+bg_color = Color(0, 0.10980392, 0.3254902, 1)
 border_width_left = 12
 border_width_top = 12
 border_width_right = 12
@@ -79,6 +79,7 @@ corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
 [node name="Player" type="CharacterBody2D" unique_id=1938843242 node_paths=PackedStringArray("camera", "buff", "weakpons", "stats", "cards") groups=["Player"]]
+z_index = 3
 script = ExtResource("1_3c3w1")
 camera = NodePath("Camera2D")
 buff = NodePath("Control")
@@ -186,29 +187,31 @@ show_percentage = false
 [node name="GraphFrame" type="GraphFrame" parent="." unique_id=1218481767]
 z_index = 3
 offset_left = -1011.0
-offset_top = 405.0
+offset_top = 331.0
 offset_right = 998.0
 offset_bottom = 620.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_5qrx2")
 
-[node name="cardsManager" type="HBoxContainer" parent="." unique_id=838978963 node_paths=PackedStringArray("stats")]
+[node name="cardsManager" type="HBoxContainer" parent="." unique_id=838978963 node_paths=PackedStringArray("stats", "frame")]
 z_index = 3
 offset_left = -936.0
-offset_top = 475.0
+offset_top = 406.0
 offset_right = 951.0
 offset_bottom = 597.0
 theme_override_constants/separation = 25
 alignment = 1
 script = ExtResource("10_ndjxb")
+size_x = 125
 cards_ui_scene = ExtResource("11_5qrx2")
 stats = NodePath("../PlayerStats")
+frame = NodePath("../GraphFrame")
 
 [node name="Label2" type="Label" parent="." unique_id=1486301069]
 z_index = 3
-offset_left = -259.0
-offset_top = 219.0
-offset_right = 257.0
-offset_bottom = 322.0
+offset_left = -252.0
+offset_top = 249.0
+offset_right = 264.0
+offset_bottom = 352.0
 theme_override_colors/font_color = Color(0.64705884, 0, 0, 1)
 theme_override_font_sizes/font_size = 75
 text = "CARTAS"

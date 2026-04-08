@@ -2,7 +2,46 @@
 
 [ext_resource type="Script" uid="uid://bjvvj651bcksm" path="res://card.gd" id="1_hvaon"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvaon"]
+bg_color = Color(0, 0.7019608, 0.6, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wocha"]
+bg_color = Color(0.21568628, 0.2901961, 0.6, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxb0a"]
+bg_color = Color(0, 0.81960785, 0.6, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
 [node name="Card" type="Button" unique_id=474845275]
 offset_right = 91.0
 offset_bottom = 137.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvaon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wocha")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pxb0a")
 script = ExtResource("1_hvaon")

@@ -3,15 +3,14 @@ extends Node
 @export var enemy_scene : PackedScene
 @export var player : CharacterBody2D
 
-# ⏱️ TEMPO
 var spawn_timer := 0.0
-@export var spawn_cooldown := 2.0
+@export var spawn_cooldown := 1.0
 
-# 📍 SPAWN
 @export var spawn_radius := 2000.0
 @export var min_spawn_radius := 1500.0
 @export var spawn_qtd := 1
 
+var multiplier := 1
 
 func _process(delta):
 	if player == null:

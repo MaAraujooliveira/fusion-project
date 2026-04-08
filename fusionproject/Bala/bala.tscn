@@ -4,21 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://cs2nf3rabirty" path="res://Bala/Bala.png" id="1_ugrv2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kdvvt"]
-radius = 32.01562
+radius = 25.019993
 
 [node name="Bala" type="Area2D" unique_id=1562553599]
 script = ExtResource("1_kdvvt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1052165493]
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 texture = ExtResource("1_ugrv2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1409253931]
 shape = SubResource("CircleShape2D_kdvvt")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=474088018]
-scale = Vector2(4, 4)
-energy = 1.54
+scale = Vector2(3, 3)
+energy = 5.63
 blend_mode = 2
 texture = ExtResource("1_ugrv2")
 
