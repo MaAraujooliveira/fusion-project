@@ -150,6 +150,7 @@ shape = SubResource("CircleShape2D_mhpjh")
 [node name="PlayerStats" parent="." unique_id=520496112 node_paths=PackedStringArray("sprite", "xp_bar", "ui") instance=ExtResource("3_wnvi2")]
 hp = 35.0
 sprite = NodePath("../Sprite2D")
+damage = 2.0
 bullet_speed = 1250
 picked_qtd = 3
 xp_bar = NodePath("../ProgressBar2")

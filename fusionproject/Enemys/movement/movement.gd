@@ -14,17 +14,13 @@ var target : Node2D
 
 func iniciar(b):
 	base = b
+	player = get_tree().get_first_node_in_group("Player")
 	
 	# 🔥 escolhe alvo UMA VEZ
-	if randf() < 0.5:
+	if randf() < 0.7:
 		target = base
 	else:
 		target = player
-
-
-func _ready() -> void:
-	player = get_tree().get_first_node_in_group("Player")
-
 
 func _physics_process(delta: float) -> void:
 	if not target:

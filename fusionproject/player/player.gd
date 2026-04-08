@@ -62,7 +62,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Recaregar") and weakpons.municoes_ativas < weakpons.max_municoes:
 		set_physics_process(false)
 		weakpons.recaregar()
-		await get_tree().create_timer(1.5).timeout
+		await get_tree().create_timer(0.5).timeout
 		set_physics_process(true)
 
 

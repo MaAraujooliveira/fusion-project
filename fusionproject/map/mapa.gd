@@ -7,10 +7,6 @@ extends Node
 var spawn_timer := 0.0
 @export var spawn_cooldown := 2.0
 
-# 👾 CONTROLE
-var enemys := []
-const MAX_ENEMYS := 200
-
 # 📍 SPAWN
 @export var spawn_radius := 2000.0
 @export var min_spawn_radius := 1500.0
@@ -30,9 +26,7 @@ func _process(delta):
 
 func spawn_enemy():
 	for i in range(spawn_qtd):
-		if enemys.size() >= MAX_ENEMYS:
-			return
-		
+	
 		var enemy = enemy_scene.instantiate()
 		if enemy == null:
 			continue
@@ -43,7 +37,6 @@ func spawn_enemy():
 		enemy.global_position = pos
 		
 		get_parent().add_child(enemy)
-		enemys.append(enemy)
 
 
 func get_spawn_position():
