@@ -23,7 +23,7 @@ turret_stats = NodePath("../TurretStats")
 [node name="TurretStats" parent="." unique_id=1815134278 instance=ExtResource("2_owwf6")]
 speed = 1250.0
 damage = 3.5
-range = 256.0
+range = 326.0
 
 [node name="TurretAttack" parent="." unique_id=1113034071 node_paths=PackedStringArray("turret", "stats") instance=ExtResource("3_owwf6")]
 bala_scene = ExtResource("5_gcbsp")

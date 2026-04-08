@@ -13,13 +13,15 @@ size = Vector2(4675, 31991)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vbhl"]
 size = Vector2(44475.5, 3673)
 
-[node name="Mapa" type="Node" unique_id=230410568 node_paths=PackedStringArray("player")]
+[node name="Mapa" type="Node" unique_id=230410568 node_paths=PackedStringArray("player", "base")]
 script = ExtResource("1_tmbt0")
 enemy_scene = ExtResource("2_r70gt")
 player = NodePath("Player")
-spawn_cooldown = 2.5
+base = NodePath("Base")
+spawn_cooldown = 5.0
 spawn_radius = 1000.0
 min_spawn_radius = 750.0
+difficulty_increase_time = 20.0
 
 [node name="Base" parent="." unique_id=1381480154 instance=ExtResource("2_e6yns")]
 position = Vector2(477, 194)

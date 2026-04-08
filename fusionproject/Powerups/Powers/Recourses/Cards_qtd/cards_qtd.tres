@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Cards_qtd" format=3 uid="uid://bk4f7m3lwaa1m"]
+
+[ext_resource type="Script" uid="uid://d0ai8kpl1gjrs" path="res://Powerups/Powers/Cards_qtd/Cards_qtd.gd" id="1_m1krj"]
+
+[resource]
+script = ExtResource("1_m1krj")
+Name = "Cronstrutiva"
+buff = 1.0
+description = "Quanto mais cartas mais torretas aumenta suas cartas pegadas em 1"
+metadata/_custom_type_script = "uid://d0ai8kpl1gjrs"

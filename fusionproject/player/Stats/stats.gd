@@ -36,7 +36,7 @@ func add_xp(amount):
 func verificar_xp():
 	while xp >= max_xp:
 		xp -= max_xp
-		max_xp = clamp(100 + max_xp,1,2500)
+		max_xp = clamp(50 + max_xp,1,2500)
 
 		if not ui.visible:
 			ui.mostrar_ui()
