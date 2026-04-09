@@ -23,7 +23,7 @@ func take_damage(amount):
 	hp -= amount
 	await piscar(Color.RED,0.25)
 	if hp <= 0:
-		get_tree().reload_current_scene()
+		get_tree().change_scene_to_file("res://TelaInicial/TelaInicial.tscn")
 
 
 

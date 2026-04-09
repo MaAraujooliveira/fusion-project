@@ -17,7 +17,7 @@ func _ready() -> void:
 func take_damage(amount):
 	hp -= amount
 	if hp <= 0:
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://TelaInicial/TelaInicial.tscn")
 
 func _process(delta: float) -> void:
 	$Label.text = "Base HP: " + str(hp) + " / " + str(max_hp)

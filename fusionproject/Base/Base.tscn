@@ -15,7 +15,7 @@ script = ExtResource("1_h44yl")
 coin_scene = ExtResource("2_edygm")
 spawn_radius = 1500.0
 coin_amount = 2
-spawn_time = 0.1
+spawn_time = 5.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=30089900]
 scale = Vector2(20, 20)

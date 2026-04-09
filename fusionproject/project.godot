@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Fusionproject"
-run/main_scene="uid://dp8qyafl7sxp6"
+config/name="Cowboy Survivor Turrets"
+run/main_scene="uid://p215jnvrfadt"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.svg"
 

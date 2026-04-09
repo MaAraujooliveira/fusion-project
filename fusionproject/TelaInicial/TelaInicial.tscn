@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://p215jnvrfadt"]
+
+[ext_resource type="Script" uid="uid://dwwlm8dak876c" path="res://TelaInicial/tela_inicial.gd" id="1_o4uex"]
+
+[node name="TelaInicial" type="Control" unique_id=632035793]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_o4uex")
+
+[node name="GraphFrame" type="GraphFrame" parent="." unique_id=1302523458]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 648.0
+
+[node name="Label" type="Label" parent="." unique_id=1174049719]
+layout_mode = 0
+offset_top = -46.0
+offset_right = 1153.0
+offset_bottom = 203.0
+theme_override_colors/font_color = Color(0.37960038, 0.14619434, 9.62615e-08, 1)
+theme_override_font_sizes/font_size = 95
+text = "Cowboy Survivor Turrets"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1132310385]
+modulate = Color(0, 0.7764706, 0.02745098, 1)
+layout_mode = 0
+offset_left = 329.0
+offset_top = 262.0
+offset_right = 828.0
+offset_bottom = 346.0
+theme_override_colors/font_focus_color = Color(0.99215686, 0.23921569, 0.23921569, 1)
+theme_override_font_sizes/font_size = 55
+text = "PLAY"
+
+[node name="Button2" type="Button" parent="." unique_id=122681941]
+modulate = Color(1, 0, 0.02745098, 1)
+layout_mode = 0
+offset_left = 329.0
+offset_top = 431.0
+offset_right = 828.0
+offset_bottom = 515.0
+theme_override_colors/font_focus_color = Color(0.99215686, 0.23921569, 0.23921569, 1)
+theme_override_font_sizes/font_size = 55
+text = "EXIT"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
