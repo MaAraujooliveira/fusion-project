@@ -13,9 +13,9 @@ radius = 1532.204
 [node name="Base" type="Node2D" unique_id=1381480154]
 script = ExtResource("1_h44yl")
 coin_scene = ExtResource("2_edygm")
-spawn_radius = 500.0
+spawn_radius = 1500.0
 coin_amount = 2
-spawn_time = 5.0
+spawn_time = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=30089900]
 scale = Vector2(20, 20)
