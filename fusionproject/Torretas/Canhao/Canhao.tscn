@@ -29,7 +29,7 @@ range = 326.0
 bala_scene = ExtResource("5_gcbsp")
 turret = NodePath(".")
 stats = NodePath("../TurretStats")
-cooldown = 2.0
+cooldown = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2089206671]
 scale = Vector2(7.5, 7.5)

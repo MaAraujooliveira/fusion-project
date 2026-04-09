@@ -42,10 +42,18 @@ func _process(delta: float) -> void:
 	weapons.timer_arma += delta
 	if weapons.timer_arma >= weapons.cooldown:
 		if target:
-			var final_dir = (target.global_position - global_position).normalized()
-			weapons.atirar(final_dir, 1)
+			var bullet_speed = stats.speed
+
+			var distance = global_position.distance_to(target.global_position)
+			var time_to_hit = distance / bullet_speed
+
+			var future_pos = target.global_position + target.velocity * time_to_hit
+
+			var final_dir = (future_pos - global_position).normalized()
+			
+			weapons.atirar(final_dir, 1) 
 			weapons.timer_arma = 0
-	
+			
 	if target:
 		look_at(target.global_position)
 	

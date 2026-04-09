@@ -71,7 +71,6 @@ func _process(delta: float) -> void:
 		var original_scale = sprite.scale
 		var original_scale2 = spriteP.scale
 
-		# 💀 mata tween antigo
 		if has_meta("reload_tween"):
 			var old = get_meta("reload_tween")
 			if old and old.is_running():

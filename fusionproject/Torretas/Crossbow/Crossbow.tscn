@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d3af8jmlynods"]
+
+[ext_resource type="Script" uid="uid://c1h8bilmmlfvo" path="res://Torretas/Crossbow/crossbow.gd" id="1_33adr"]
+[ext_resource type="Texture2D" uid="uid://d2de3142bbjyu" path="res://Torretas/Crossbow/Crossbow.png" id="2_pq2cx"]
+[ext_resource type="PackedScene" uid="uid://hngpkj884g2g" path="res://Torretas/TurretAttacks/TurretAttack.tscn" id="3_hymk4"]
+[ext_resource type="PackedScene" uid="uid://d37xjxu4qg5nd" path="res://Bala/bala.tscn" id="4_w0wnb"]
+[ext_resource type="PackedScene" uid="uid://c8h2kkugrdmj" path="res://Torretas/GetEnemy/get_enemy_dist.tscn" id="5_ihylt"]
+[ext_resource type="PackedScene" uid="uid://pnrjc3smk5ma" path="res://Torretas/TurretStats/turret_stats.tscn" id="6_u5427"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mbopa"]
+radius = 57.31492
+
+[node name="Crossbow" type="Node2D" unique_id=712676439 node_paths=PackedStringArray("stats", "distance", "weapons")]
+script = ExtResource("1_33adr")
+stats = NodePath("TurretStats")
+distance = NodePath("GetEnemyDist")
+weapons = NodePath("TurretAttack")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=637510526]
+rotation = -1.5686601
+scale = Vector2(7, 7)
+texture = ExtResource("2_pq2cx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=648053089]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=570224024]
+shape = SubResource("CircleShape2D_mbopa")
+
+[node name="TurretAttack" parent="." unique_id=1113034071 node_paths=PackedStringArray("turret", "stats") instance=ExtResource("3_hymk4")]
+bala_scene = ExtResource("4_w0wnb")
+turret = NodePath("..")
+stats = NodePath("../TurretStats")
+cooldown = 1.0
+
+[node name="GetEnemyDist" parent="." unique_id=1757186048 node_paths=PackedStringArray("turret", "turret_stats") instance=ExtResource("5_ihylt")]
+turret = NodePath("..")
+turret_stats = NodePath("../TurretStats")
+
+[node name="TurretStats" parent="." unique_id=1815134278 instance=ExtResource("6_u5427")]
+speed = 1750.0
+damage = 1.0
+range = 728.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
