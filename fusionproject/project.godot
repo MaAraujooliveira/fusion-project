@@ -13,7 +13,7 @@ config_version=5
 config/name="Cowboy Survivor Turrets"
 run/main_scene="uid://p215jnvrfadt"
 config/features=PackedStringArray("4.6")
-config/icon="res://icon.svg"
+config/icon="uid://b868wbl0l6hh"
 
 [autoload]
 
