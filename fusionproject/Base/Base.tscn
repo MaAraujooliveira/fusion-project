@@ -7,6 +7,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h44yl"]
 size = Vector2(100, 102)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_edygm"]
+radius = 1532.204
+
 [node name="Base" type="Node2D" unique_id=1381480154]
 script = ExtResource("1_h44yl")
 coin_scene = ExtResource("2_edygm")
@@ -20,12 +23,18 @@ texture = ExtResource("1_6elwd")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=238222262 groups=["Base"]]
 
-[node name="Area2D" type="Area2D" parent="StaticBody2D" unique_id=1235499738 groups=["Base"]]
+[node name="Area2D" type="Area2D" parent="StaticBody2D" unique_id=1235499738]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D/Area2D" unique_id=725855776]
 position = Vector2(-3.0000005, 67)
 scale = Vector2(2.1, 2.1)
 shape = SubResource("RectangleShape2D_h44yl")
+
+[node name="Area2D2" type="Area2D" parent="StaticBody2D" unique_id=187354499 groups=["BaseRange"]]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D/Area2D2" unique_id=321600379]
+position = Vector2(0, 71)
+shape = SubResource("CircleShape2D_edygm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1857324815]
 position = Vector2(-3, 67)
@@ -33,14 +42,15 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_h44yl")
 
 [node name="Label" type="Label" parent="." unique_id=1590439237]
-offset_left = -127.0
+offset_left = -737.0
 offset_top = -133.0
-offset_right = 121.0
+offset_right = 737.0
 offset_bottom = -43.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 65
 text = "100/100"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="body_entered" from="StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]

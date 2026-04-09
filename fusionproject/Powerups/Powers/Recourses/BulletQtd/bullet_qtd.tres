@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_gl4sh")
-Name = "Quanto mais melhor"
+Name = "Bullet Storm"
 buff = 1.0
-description = "Aumentar a quantidde de tiros é sempre bom"
+description = "Fire additional projectiles with each shotnal projectiles with each shotre bom"

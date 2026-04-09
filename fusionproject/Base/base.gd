@@ -10,13 +10,16 @@ class_name Base
 
 var timer := 0.0
 
+func _ready() -> void:
+	queue_redraw()
+
 func take_damage(amount):
 	hp -= amount
 	if hp <= 0:
 		get_tree().quit()
 
 func _process(delta: float) -> void:
-	$Label.text = str(hp) + " / " + str(max_hp)
+	$Label.text = "Base HP: " + str(hp) + " / " + str(max_hp)
 
 	timer += delta
 	
@@ -51,3 +54,11 @@ func spawn_coins():
 			.set_ease(Tween.EASE_OUT)
 		
 		tween.tween_property(coin, "scale", Vector2(1, 1), 0.5)
+
+func _draw():
+	var shape = $StaticBody2D/Area2D2/CollisionShape2D3.shape
+	
+	if shape is CircleShape2D:
+		var radius = shape.radius
+		
+		draw_circle(Vector2.ZERO, radius, Color(0.0, 1.0, 0.0, 1.0),false,50) # verde transparente

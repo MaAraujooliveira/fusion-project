@@ -46,21 +46,13 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	weakpons.timer_arma += delta
 	
-	$Label.text = "Municoes : " + str(weakpons.municoes_ativas) + " / " + str(weakpons.max_municoes)
+	$Label.text = "Bullets : " + str(weakpons.municoes_ativas) + " / " + str(weakpons.max_municoes)
 	
 	$ProgressBar.max_value = stats.max_hp
 	$ProgressBar.value = stats.hp
 	
 	if Input.is_action_pressed("shoot") and weakpons.timer_arma >= weakpons.cooldown  and weakpons.municoes_ativas > 0:
 		var final_dir = (get_global_mouse_position() - $Sprite2D2.global_position)
-		var sprite = $Sprite2D2
-		var original_scale = sprite.scale
-		var tween = get_tree().create_tween()
-		tween.parallel().tween_property(sprite, "scale", original_scale * 1.2, 0.25)\
-			.set_trans(Tween.TRANS_BACK)\
-			.set_ease(Tween.EASE_OUT)
-		tween.tween_property(sprite, "scale", original_scale, 0.15)
-		sprite.scale = original_scale
 		$CPUParticles2D2.direction = -final_dir
 		$CPUParticles2D2.emitting = true
 		camera.shake(0.25,4)
@@ -73,27 +65,38 @@ func _process(delta: float) -> void:
 		
 		var spriteP = $Sprite2D
 		var sprite = $Sprite2D2
-		
+
+		# ✅ pega escala real
 		var original_scale = sprite.scale
 		var original_scale2 = spriteP.scale
-		
-		var tween = get_tree().create_tween()
-		
+
+		# 💀 mata tween antigo
+		if has_meta("reload_tween"):
+			var old = get_meta("reload_tween")
+			if old and old.is_running():
+				old.kill()
+
+		# garante escala base correta
+		sprite.scale = original_scale
+		spriteP.scale = original_scale2
+
+		var tween = create_tween()
+		set_meta("reload_tween", tween)
+
 		# 💥 crescer juntos
-		tween.parallel().tween_property(sprite, "scale", original_scale * 1.2, 0.5)\
+		tween.parallel().tween_property(sprite, "scale", original_scale * 1.2, 0.2)\
 			.set_trans(Tween.TRANS_BACK)\
 			.set_ease(Tween.EASE_OUT)
-		
+
 		tween.parallel().tween_property(spriteP, "scale", original_scale2 * 1.2, 0.2)\
 			.set_trans(Tween.TRANS_BACK)\
 			.set_ease(Tween.EASE_OUT)
-		
-		# 💥 voltar juntos
+
+		# 💥 voltar
 		tween.tween_property(sprite, "scale", original_scale, 0.15)
 		tween.parallel().tween_property(spriteP, "scale", original_scale2, 0.15)
-		
+
 		weakpons.recaregar()
-		sprite.scale = original_scale
 		
 		await get_tree().create_timer(0.5).timeout
 		

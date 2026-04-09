@@ -18,10 +18,10 @@ script = ExtResource("1_tmbt0")
 enemy_scene = ExtResource("2_r70gt")
 player = NodePath("Player")
 base = NodePath("Base")
-spawn_cooldown = 5.0
+spawn_cooldown = 3.0
 spawn_radius = 1000.0
 min_spawn_radius = 750.0
-difficulty_increase_time = 20.0
+difficulty_increase_time = 15.0
 
 [node name="Base" parent="." unique_id=1381480154 instance=ExtResource("2_e6yns")]
 position = Vector2(477, 194)
@@ -71,6 +71,7 @@ scale = Vector2(532.6954, 123.58008)
 texture = ExtResource("5_6gih8")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Parede" unique_id=734024772]
+modulate = Color(0.7162962, 0.7162962, 0.7162962, 1)
 z_index = -4
 position = Vector2(-611.2505, 68.24951)
 scale = Vector2(2198.9065, 1565.2813)

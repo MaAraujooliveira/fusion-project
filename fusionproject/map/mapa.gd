@@ -48,7 +48,7 @@ func increase_difficulty():
 	# diminui tempo entre spawn
 	spawn_cooldown = max(0.3, spawn_cooldown - 0.05)
 
-	print("Dificuldade:", multiplier)
+
 
 # 👾 SPAWN
 func spawn_enemy():

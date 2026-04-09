@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_m1krj")
-Name = "Cronstrutiva"
+Name = "Growing Arsenal"
 buff = 1.0
-description = "Quanto mais cartas mais torretas aumenta suas cartas pegadas em 1"
+description = "Gain +1 additional card on every card choice"
 metadata/_custom_type_script = "uid://d0ai8kpl1gjrs"

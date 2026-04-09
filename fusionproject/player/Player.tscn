@@ -158,10 +158,10 @@ ui = NodePath("../Control")
 
 [node name="Control" parent="." unique_id=369149832 node_paths=PackedStringArray("player", "cards", "player_stats") instance=ExtResource("6_aqcbf")]
 visible = false
-offset_left = -292.0
-offset_top = 40.0
-offset_right = -252.0
-offset_bottom = 80.0
+offset_left = -7.0
+offset_top = 48.0
+offset_right = 33.0
+offset_bottom = 88.0
 player = NodePath("..")
 cards = NodePath("../cardsManager")
 player_stats = NodePath("../PlayerStats")
@@ -213,7 +213,7 @@ offset_right = 264.0
 offset_bottom = 352.0
 theme_override_colors/font_color = Color(0, 0.35686275, 0.49019608, 1)
 theme_override_font_sizes/font_size = 75
-text = "CARTAS"
+text = "CARDS"
 horizontal_alignment = 1
 vertical_alignment = 1
 

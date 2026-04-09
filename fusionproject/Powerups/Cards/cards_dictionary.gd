@@ -1,8 +1,8 @@
 extends Node
 
 var cards := {
-	"Canhao":{
-		"Name":"Canhao",
+	"Cannon":{
+		"Name":"Cannon",
 		"Build":preload("res://Torretas/Canhao/Canhao.tscn")
 	}
 }
