@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b2pc46ugo2dwf"]
 
 [ext_resource type="Script" uid="uid://bjxl7k2tk3884" path="res://Powerups/control.gd" id="1_r2oxj"]
+[ext_resource type="Texture2D" uid="uid://bgdy0um411fi1" path="res://Coins/coins.png" id="2_i5ics"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2oxj"]
 bg_color = Color(0.47843137, 0.24705882, 0, 1)
@@ -105,3 +106,20 @@ theme_override_font_sizes/font_size = 75
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1585889621]
+process_mode = 3
+position = Vector2(-76, -1195)
+amount = 500
+texture = ExtResource("2_i5ics")
+lifetime = 4.39
+emission_shape = 3
+emission_rect_extents = Vector2(1499.875, 1)
+initial_velocity_max = 115.55
+angular_velocity_min = -10.55
+angular_velocity_max = 720.0
+scale_amount_max = 3.9
+anim_speed_min = 22.81
+anim_speed_max = 115.33
+anim_offset_min = 0.6337
+anim_offset_max = 0.6337

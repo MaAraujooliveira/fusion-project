@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TempoèPoder" format=3 uid="uid://t7sawqrgmxv7"]
+
+[ext_resource type="Script" uid="uid://b8n150pnyu0xw" path="res://Powerups/Powers/Tempoè o segredo/the time is the secret.gd" id="1_ch1dd"]
+
+[resource]
+script = ExtResource("1_ch1dd")
+Name = "Overclock"
+description = "Reduces cooldown, but decreases speed."
+metadata/_custom_type_script = "uid://b8n150pnyu0xw"

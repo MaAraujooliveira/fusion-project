@@ -7,5 +7,5 @@ class_name BasePower
 @export var description : String
 @export var image : Texture
 
-func aplicar(player,player_stats:PlayerStats):
+func aplicar(player:Player,player_stats:PlayerStats):
 	pass
